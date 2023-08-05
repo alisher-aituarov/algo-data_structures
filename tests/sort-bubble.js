@@ -1,9 +1,8 @@
 const { sort } = require("../sort-bubble");
-const { createArray } = require("../utils/create-array");
-const { measurePerformance } = require("../utils/measure-speed");
+const { createArray } = require("../utils");
+const { measurePerformance } = require("../utils");
 const { ARRAY_LENGTH } = require("../config");
-const { writeLog } = require("../utils/write-log");
-const { verifySorting } = require("../utils/verify-sort");
+const { verifySortingAndWriteLog } = require("../utils");
 
 const length = process.env.LENGTH || ARRAY_LENGTH;
 
@@ -15,6 +14,4 @@ const {
   name,
 } = measurePerformance(() => sort(array), "bubble sort", array.length);
 
-writeLog(time, out.length, name);
-
-verifySorting(out);
+verifySortingAndWriteLog(time, out, name);
