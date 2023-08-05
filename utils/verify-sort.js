@@ -3,7 +3,8 @@ function verifySorting(array) {
     return v > array[i + 1];
   });
   if (sorted === true) {
-    return console.log("All sorted!");
+    console.log("All sorted!");
+    return true;
   }
   return console.error("Array is not sorted!");
 }

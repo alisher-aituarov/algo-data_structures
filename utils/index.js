@@ -5,7 +5,9 @@ const { verifySorting } = require("./verify-sort");
 const { writeLog } = require("./write-log");
 
 function verifySortingAndWriteLog(time, array, name) {
-  if (verifySorting(array) === true) {
+  const sorted = verifySorting(array) === true;
+
+  if (sorted === true) {
     writeLog(time, array.length, name);
   }
 }
